@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meme Maker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="color-options">
+      <input type="color" id="color" />
+      <button id="randomColor">Get Random Color</button>
+      <div
+        class="color-option"
+        style="background-color: white"
+        data-color="#FFFFFF"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #c44569"
+        data-color="#c44569"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #e66767"
+        data-color="#e66767"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #f19066"
+        data-color="#f19066"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #f8a5c2"
+        data-color="#f8a5c2"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #f5cd79"
+        data-color="#f5cd79"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #63cdda"
+        data-color="#63cdda"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #546de5"
+        data-color="#546de5"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #574b90"
+        data-color="#574b90"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #303952"
+        data-color="#303952"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: black"
+        data-color="#000000"
+      ></div>
+    </div>
+    <canvas></canvas>
+    <div class="btns">
+      <span
+        ><label>Brush Style:</label>
+        <button id="btn-brushMode-fill" class="brushMode" data-brushMode="1">
+          🎨Fill
+        </button>
+        <button
+          id="btn-brushMode-draw"
+          class="brushMode active"
+          data-brushMode="2"
+        >
+          🎨Draw
+        </button>
+        <button id="btn-brushMode-paint" class="brushMode" data-brushMode="3">
+          🩸Paint
+        </button>
+      </span>
+      <input
+        id="line-width"
+        type="range"
+        min="1"
+        max="40"
+        value="5"
+        step="0.5"
+      />
+      <span
+        ><label>Font Style:</label>
+        <button id="btn-fontFill" class="active">🩸Fill</button>
+        <button id="btn-fontStroke">🎨Storke</button>
+      </span>
+      <input
+        type="range"
+        id="font-size"
+        min="10"
+        max="100"
+        value="50"
+        step="10"
+      />
+      <span>
+        <label class="fontLabel">Font:</label>
+        <button id="font-Serif" class="font active" data-font="Serif">
+          Serif
+        </button>
+        <button
+          id="font-StarWars"
+          class="font"
+          data-font="StarWars"
+          data-url="StarWars.ttf"
+        >
+          StarWars
+        </button>
+        <button
+          id="font-Disney"
+          class="font"
+          data-font="Disney"
+          data-url="Disney.ttf"
+        >
+          Disney
+        </button>
+      </span>
+      <span>Write and then double click the canvas!</span>
+      <input type="text" placeholder="Add text here!" id="text" />
+      <label for="file"
+        >Add Photo<input type="file" accept="image/*" id="file"
+      /></label>
+      <button id="eraser-btn" class="brushMode" data-brushMode="4">
+        ❌Erase
+      </button>
+      <button id="destroy-btn">💣Destroy</button>
+      <button id="save">💾Save Image</button>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
