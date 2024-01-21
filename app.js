@@ -34,7 +34,7 @@ const fontWeight = "bold";
 
 onFontLoad();
 
-async function onFontLoad() {
+function onFontLoad() {
   fonts.forEach((x) => {
     if (x.dataset.url != null && x.dataset.url != "") {
       const f = new FontFace(`${x.dataset.font})`, `url(${x.dataset.url})`);
