@@ -31,6 +31,7 @@ ctx.lineWidth = lineWidth.value;
 ctx.lineCap = "round";
 let font = "serif";
 const fontWeight = "bold";
+const activeClass = "active";
 
 onFontLoad();
 
@@ -86,8 +87,8 @@ function onColorClick(event) {
 }
 
 function onBrushChange(event) {
-  brushModes.forEach((brush) => brush.classList.remove("active"));
-  event.target.classList.add("active");
+  brushModes.forEach((brush) => brush.classList.remove(activeClass));
+  event.target.classList.add(activeClass);
   brushMode = event.target.dataset.brushmode;
 }
 
@@ -135,21 +136,15 @@ function onSaveClick() {
 }
 
 function onFontModeClick() {
-  if (isFontFilling) {
-    isFontFilling = false;
-    btnFontFill.classList.remove("active");
-    btnFontStroke.classList.add("active");
-  } else {
-    isFontFilling = true;
-    btnFontFill.classList.add("active");
-    btnFontStroke.classList.remove("active");
-  }
+  btnFontFill.classList.toggle(activeClass);
+  btnFontStroke.classList.toggle(activeClass);
+  isFontFilling = isFontFilling ? false : true;
 }
 
 function onFontChange(event) {
   font = event.target.dataset.font;
-  fonts.forEach((font) => font.classList.remove("active"));
-  event.target.classList.add("active");
+  fonts.forEach((font) => font.classList.remove(activeClass));
+  event.target.classList.add(activeClass);
 }
 
 function getRandomColor() {
